@@ -7,7 +7,7 @@ class Program
     {
         
         Job job1 = new Job();
-        job1._jobTitle = "Webcite Developer";
+        job1._jobTitle = "Website Developer";
         job1._companyName = "Windowds";
         job1._startYear = 2006;
         job1._endyear = 2012;
