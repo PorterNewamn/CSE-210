@@ -4,7 +4,7 @@ public class Entry
 {
     public string _randomPrompt;
     public string _userInput;
-    DateTime today = DateTime.Now;
+    public DateTime today = DateTime.Now;
 
     Random random = new Random();
 
@@ -25,12 +25,13 @@ public class Entry
    
     public void responsDisplay()
     {
-        Console.WriteLine($"The prompt of the day is: {PickRandomPrompt()}");
+        _randomPrompt = PickRandomPrompt();
+        Console.WriteLine($"The prompt of the day is: {_randomPrompt}");
         _userInput = Console.ReadLine();
     }
     public void Display()
     {
-        Console.WriteLine($"{_randomPrompt} {_userInput} {today.ToShortDateString()}");
+        Console.WriteLine($"{today.ToShortDateString()} {_randomPrompt} {_userInput}");
     }
 
 }

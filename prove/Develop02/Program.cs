@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.InteropServices.Marshalling;
 class Program 
 {
     static void Main(string[] args)
@@ -26,19 +27,25 @@ class Program
             else if (userInpute == "2")
             {
                paper.Display();
-
             }
-
             else if (userInpute == "3")
             {
-                
+                paper.LoadFile();
             }
-
-            else
+            else if (userInpute == "4")
+            {
+                paper.SaveFile();
+                Console.WriteLine("Entry Saved");
+            }
+            else if (userInpute == "5")
             {
                 userInpute = "quit";
             }
+            else
+            {
+                Console.WriteLine("Invalid choice, please try again.");
+            }
         }
-        Console.WriteLine("Thanks, Journal again soon!")
+        Console.WriteLine("Thanks, Journal again soon!");
     }
 }
