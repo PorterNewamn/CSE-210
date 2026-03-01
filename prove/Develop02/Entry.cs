@@ -11,7 +11,9 @@ public class Entry
     List<string> prompts = new List<string>
     {
     "What is something your are greatful for today?",
-    "What was the craziest thing you heard or saw today?", "If you could change one thing about today, what would it be and why?", "What was the funniest thing you heard or saw today and why?", 
+    "What was the craziest thing you heard or saw today?",
+    "If you could change one thing about today, what would it be and why?",
+    "What was the funniest thing you heard or saw today and why?", 
     "What was the nicist complament you gave or heard to day?"
     };
 
