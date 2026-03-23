@@ -1,5 +1,3 @@
-using System.Drawing;
-
 public class Square : Shapes
 {
     private double _side;
