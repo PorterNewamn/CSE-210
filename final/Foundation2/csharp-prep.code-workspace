@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "../../csharp-prep"
+		},
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../prepare"
+		},
+		{
+			"path": "../../prove"
+		},
+		{
+			"path": "../../sandbox"
+		}
+	]
+}

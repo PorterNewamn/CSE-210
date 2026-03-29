@@ -2,7 +2,7 @@ public class Resume
 {
     public string _firstNameOfImployer;
     
-public List<Job> _job = new List<Job>();
+    public List<Job> _job = new List<Job>();
 
 
 
