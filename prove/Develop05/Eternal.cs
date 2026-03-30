@@ -1,4 +1,4 @@
-class Eternal : Goal
+public class Eternal : Goal
 {
 
     public Eternal() : base () {}

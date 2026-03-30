@@ -1,7 +1,7 @@
 using System.Dynamic;
 using System.Security.Cryptography.X509Certificates;
 
-class Stored
+public class Stored
 {
     private List<Goal> _storeGoal = new List<Goal>();
     private List<int> _points = new List<int>();
@@ -14,8 +14,10 @@ class Stored
     public List<Goal> GetGoalList() => _storeGoal;
     public List<string> GetCheckBoxList() => _checkBox;
 
-
-
+    public int GetPoints()
+    {
+        return _pontsEarned;
+    }
     
     public void DisplayGoals()
     {
@@ -94,8 +96,12 @@ class Stored
         if (selectedGoal.Check())
         {
             _checkBox[index] = "[X]";
-            _pontsEarned = _points[index];
+            _pontsEarned += _points[index];
 
+        }
+        else
+        {
+            _pontsEarned += pointsEarned;
         }
     }
 

@@ -1,4 +1,4 @@
-class ListGoal : Goal
+public class ListGoal : Goal
 {
     private int _track = 0;
     private int _threshold;

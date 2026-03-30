@@ -1,53 +1,53 @@
-class Load
+public class Load
 {
-
-    string path = "";
-
-    private List<Stored> entrys = new List<Stored>();
+    
+    private string _path = " ";
+    public List<Goal> goals = new List<Goal>();
 
     public Load() {}
-    public void LoadFile()
-    {
-        Console.WriteLine("Enter the name of the txt file:");
-        path = Console.ReadLine();
 
-        if (File.Exists(path))
-        {
-            Stored.Clear();
-            string[] lines = File.ReadAllLines(path);
-            
-            foreach (string line in lines)
-            {
-                string[] parts = line.Split('|');
-                if (parts.Length == 3)
-                {
-                    Stored newEntry = new Stored();
-                    newEntry._randomPrompt = parts[1];
-                    newEntry._userInput = parts[2];
-                    entrys.Add(newEntry);
-                }
-            }
-        }
-        else 
-        {
-            Console.WriteLine("File not found!");
-        }
+    public void SetPath(string path)
+    {
+        _path = path;
     }
-
-    public void SaveFile()
+    
+    public void SaveGoals()
     {
-        Console.WriteLine("Enter the name of the txt file:");
-        path = Console.ReadLine();
-        using (StreamWriter outputFile = new StreamWriter(path))
+        using (StreamWriter outputFile = new StreamWriter(_path))
         {
-            foreach (Entry e in entrys)
+            Stored s = new Stored();
+            outputFile.WriteLine(s.GetPoints());
+            foreach (Goal goal in goals)
             {
-                outputFile.WriteLine($"{e.today.ToShortDateString()}|{e._randomPrompt}|{e._userInput}");
+                outputFile.WriteLine($"{goal.GetGoal()}|{goal.Check()}");
             }
         }
     }
 
+    public List<Goal> LoadGoals()
+    {
+        List<Goal> loadedGoals = new List<Goal>();
+        string[] lines = System.IO.File.ReadAllLines(_path);
+        for (int i = 1; i < lines.Length; i++) 
+        {
+            string[] parts = lines[i].Split('|');
+            string type = parts[0];
+            string name = parts[1];
+            string description = parts[2];
+            int points = int.Parse(parts[3]);
+            bool isComplete = bool.Parse(parts[4]);
 
-
-
+            Goal newGoal;
+            if (type == "Eternal")
+            {
+                newGoal = new Eternal();
+            }
+            else
+            {
+                newGoal = new Goal();
+            }
+            loadedGoals.Add(newGoal);
+        }
+        return loadedGoals;
+    }
 }

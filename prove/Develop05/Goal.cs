@@ -1,11 +1,10 @@
-class Goal
+public class Goal
 {
     protected string _description;
     protected string _name;
     protected int _pointValue;
 
-
-    public Goal() { }
+    public Goal(){}
 
     virtual public void InputGoal()
     {
